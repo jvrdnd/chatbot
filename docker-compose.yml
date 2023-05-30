@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  job:
+    build:
+      context: ./job
+      args:
+        - OPENAI_API_KEY
+    image: chatbot-job
+    volumes:
+      - index:/usr/idx
+  api:
+    build:
+      context: ./api
+      args:
+        - OPENAI_API_KEY
+    image: chatbot-api
+    volumes:
+      - index:/usr/idx:ro
+    ports:
+      - 9090:9090
+    depends_on:
+      job:
+        condition: service_completed_successfully
+  ui:
+    image: nginx
+    volumes:
+      - ./ui/nginx.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./ui/src:/etc/nginx/html:ro
+    ports:
+      - 80:80
+    depends_on:
+      - api
+
+volumes:
+  index:

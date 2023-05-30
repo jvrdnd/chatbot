@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Scale Chatbot (Beta)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="chat">
+      <div id="header">
+        <a id="header-logo" href="https://www.scalevp.com/">
+          <img src="img/logo-header-green.svg">
+        </a>
+        <ul id="header-navigation">
+          <li><a href="https://www.scalevp.com/portfolio">Portfolio</a></li>
+          <li><a href="https://www.scalevp.com/team">Team</a></li>
+          <li><a href="https://www.scalevp.com/network">Network</a></li>
+          <li><a href="https://www.scalevp.com/blog">Blog</a></li>
+          <li><a href="https://www.scalevp.com/generative-ai">Generative AI</a></li>
+          <li><a href="https://www.scalestudio.vc">Scale Studio</a></li>
+        </ul>
+      </div>
+    
+      <div id="history">
+        <div class="msg scale-msg">
+          <div><img class="scale-img" src="img/logo-chat.svg"></div>
+          <div class="bubble scale-bubble">
+            <div class="name">Scale Venture Partners</div>
+            <div class="text">
+              Hey there! I'm the Scale Chatbot. Ask me anything about Scale, our portfolio, or our investors and I'll do my best to answer.<br><br>If you'd like to know how I was built, check out <a href="https://www.scalevp.com/blog/open-sourcing-the-scale-chatbot">the blog post</a> and <a href="https://github.com/jvrdnd/chatbot">the repo</a>!
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <form id="input">
+        <input type="text" id="textbox" placeholder="Send a message" autocomplete="off">
+        <button id="button"><img src="img/send-icon.svg"></button>
+      </form>
+      <div id="disclaimer">
+        The Scale Chatbot is in beta. It could be wrong, inaccurate, or even hallucinate. Your use is subject to our <a href="https://www.scalevp.com/terms-and-conditions">terms</a> and our <a href="https://www.scalevp.com/privacy-policy">privacy policy</a>.
+      </div>
+    </div>
+    <script src="chatbot.js"></script>
+  </body>
+</html>

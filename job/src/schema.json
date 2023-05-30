@@ -1,0 +1,32 @@
+{
+  "blog_posts": {
+    "heading": "BLOG POSTS",
+    "context": [
+      "title"
+    ]
+  },
+  "portfolio_companies": {
+    "heading": "PORTFOLIO COMPANIES",
+    "context": [
+      "name",
+      "investors"
+    ]
+  },
+  "team_members": {
+    "heading": "TEAM MEMBERS",
+    "context": [
+      "name",
+      "title",
+      "email"
+    ],
+    "descriptors": {
+      "investments": "INVESTMENTS"
+    }
+  },
+  "faq_questions": {
+    "heading": "FAQ",
+    "context": [
+      "question"
+    ]
+  }
+}

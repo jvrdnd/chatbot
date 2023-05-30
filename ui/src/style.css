@@ -1,0 +1,193 @@
+@font-face {
+  font-family: "Sofia-Reg";
+  src: url("fonts/SofiaPro-Regular.otf") format("opentype");
+}
+@font-face {
+  font-family: "Sofia-SemiBold";
+  src: url("fonts/SofiaPro-SemiBold.otf") format("opentype");
+}
+@font-face {
+  font-family: "Sofia-Bold";
+  src: url("fonts/SofiaPro-Bold.otf") format("opentype");
+}
+
+:root {
+  --scale-blue: #b5e5dc;
+  --scale-dark-blue: #95c5bc;
+  --scale-gray: #fafaf9;
+  --scale-dark-gray: #dadad9;
+  --scale-green: #405650;
+  --scale-yellow: #e1ae25;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  font-family: "Sofia-Reg", Helvetica, sans-serif;
+  font-size: 1em;
+}
+
+a {
+  color: var(--scale-green);
+}
+
+#chat {
+  display: flex;
+  flex-direction: column;
+  max-width: 1140px;
+  width: 100%;
+}
+
+#header {
+  background: white;
+  display: flex;
+  padding: 0 15px;
+}
+#header-logo > img {
+  height: 25px;
+  padding: 15px 0;
+}
+#header-navigation {
+  align-items: center;
+  display: flex;
+  flex-grow: 1;
+  justify-content: end;
+  list-style-type: none;
+}
+#header-navigation > li > a {
+  color: var(--scale-green);
+  font-family: "Sofia-SemiBold", Helvetica, sans-serif;
+  font-size: 1.125rem;
+  letter-spacing: 1px;
+  margin-left: 35px;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+#header-navigation > li > a:after {
+  background: var(--scale-yellow);
+  bottom: -8px;
+  content: '';
+  height: 2px;
+  left: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform .4s;
+  width: 100%;
+}
+#header-navigation > li > a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  transition: transform .4s;
+}
+
+#history {
+  border-radius: 10px;
+  flex-grow: 1;
+  padding: 15px;
+  margin-top: 30px;
+  overflow-y: auto;
+}
+
+.msg {
+  display: flex;
+  margin-bottom: 15px;
+  line-height: 1.25;
+}
+.msg:last-of-type {
+  margin: 0;
+}
+.user-msg {
+  flex-direction: row-reverse;
+}
+
+.bubble {
+  border-radius: 10px;
+  max-width: calc((100% - 100px) / 2 + 10%);
+  padding: 15px;
+}
+.scale-bubble {
+  background: var(--scale-gray);
+  border: 1px solid var(--scale-dark-gray);
+}
+.user-bubble {
+  background: var(--scale-blue);
+  border: 1px solid var(--scale-dark-blue);
+}
+
+.scale-img {
+  margin: 15px 15px 15px 0;
+  width: 25px;
+}
+.user-img {
+  margin: 15px 0 15px 15px;
+  width: 25px;
+}
+.name {
+  font-family: "Sofia-Semibold", Helvetica, sans-serif;
+  font-weight: bold;
+  margin: 0 10px 10px 0;
+  text-transform: uppercase;
+}
+
+#input {
+  align-items: center;
+  display: flex;
+  margin: 15px;
+  position: relative;
+}
+#textbox {
+  appearance: none;
+  background: #fff;
+  border: 1px solid var(--scale-blue);
+  border-radius: 10px;
+  box-shadow: 0 0 4px -1px var(--scale-blue);
+  flex: 1;
+  font-family: "Sofia-Reg", Helvetica, sans-serif;
+  font-size: 1rem;
+  padding: 15px 57px 15px 15px;
+}
+#textbox:focus {
+  border-color: var(--scale-yellow);
+  box-shadow: 0 0 4px -1px var(--scale-yellow);
+  outline: none;
+}
+#textbox::placeholder {
+  color: #aaa;
+}
+#button {
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  height: 27px;
+  padding: 5px;
+  position: absolute;
+  right: 15px;
+}
+#button:hover:enabled {
+  background-color: #eee;
+  cursor: pointer;
+}
+#button > img {
+  height: 15px;
+}
+
+#disclaimer {
+  font-size: .7rem;
+  padding: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 1000px) {
+  #header-navigation {
+    display: none;
+  }
+}

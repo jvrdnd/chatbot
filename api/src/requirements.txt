@@ -1,0 +1,4 @@
+gevent
+numpy
+openai
+uwsgi
