@@ -48,7 +48,7 @@ def completion(
 
 # return message(s) from a completion
 def blocking_completion(sections, **kwargs):
-    return completion(sections, **kwargs)[0].message.content
+    return completion(sections, **kwargs)["choices"][0].message.content
 def streaming_completion(sections, **kwargs):
     for r in completion(sections, True, **kwargs):
         chunk = r["choices"][0].get("delta", {}).get("content", "")
